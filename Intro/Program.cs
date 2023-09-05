@@ -28,13 +28,13 @@ class Program
 
     static void IntroTaskTwo() // 05.09.2023 Task Two
     {
-        Console.WriteLine("Please input 1 for Centigrate to Farenheit and 2 for Farenheit to Centigrate");
+        Console.WriteLine("Please input 1 for Centigrate to Farenheit and 2 for Farenheit to Centigrate.");
 
-        string choice = Console.ReadLine();
+        string? choice = Console.ReadLine();
 
         if (choice == "1")
         {
-            Console.WriteLine("Please input a temperature in Centigrate");
+            Console.WriteLine("Please input a temperature in Centigrate.");
 
             double input = Convert.ToDouble(Console.ReadLine());
 
@@ -42,7 +42,7 @@ class Program
         }
         else if (choice == "2")
         {
-            Console.WriteLine("Please input a temperature in Farenheit");
+            Console.WriteLine("Please input a temperature in Farenheit.");
 
             double input = Convert.ToDouble(Console.ReadLine());
 
