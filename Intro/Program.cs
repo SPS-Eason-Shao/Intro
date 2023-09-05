@@ -10,7 +10,9 @@ class Program
 
         // IntroTaskTwo();
 
-        IntroTaskThree();
+        // IntroTaskThree();
+
+        IntroTaskFour();
 
         Console.ReadLine(); // Just to pause the program so that the terminal doesn't disappear suddenly
     }
@@ -79,6 +81,28 @@ class Program
         int grippersPrice = (2 * roomWidth + 2 * roomLength) * priceOfGrippers;
 
         return carpetPrice + underlayPrice + grippersPrice + priceOfFitting;
+    }
+
+    static void IntroTaskFour() // 05.09.2023 Task Four
+    {
+        Console.WriteLine("Please input the ball pit radius, the ball pit height, and the ball radius.");
+
+        string[] inputs = Console.ReadLine()!.Split();
+        double ballPitRadius = double.Parse(inputs[0]), ballPitHeight = double.Parse(inputs[1]), ballRadius = double.Parse(inputs[2]);
+
+        Console.WriteLine("The total number of balls necessary is: " + BallFilling(ballPitRadius, ballPitHeight, ballRadius));
+    }
+
+    static int BallFilling(double ballPitRadius, double ballPitHeight, double ballRadius)
+    {
+        const double packingDensity = 0.75;
+
+        double ballPitVolume = Math.PI * Math.Pow(ballPitRadius, 2) * ballPitHeight;
+        double ballVolume = 4.0 / 3.0 * Math.PI * Math.Pow(ballRadius, 3);
+
+        double ballNumber = ballPitVolume / (packingDensity * ballVolume);
+
+        return (int) Math.Ceiling(ballNumber);
     }
 }
 
