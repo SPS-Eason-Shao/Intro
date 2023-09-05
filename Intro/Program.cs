@@ -8,7 +8,9 @@ class Program
 
         // IntroTaskOne();
 
-        IntroTaskTwo();
+        // IntroTaskTwo();
+
+        IntroTaskThree();
 
         Console.ReadLine(); // Just to pause the program so that the terminal doesn't disappear suddenly
     }
@@ -56,6 +58,27 @@ class Program
     static double Farenheit2Centigrate(double input) // Function for Task Two
     {
         return (input - 32) / 1.8;
+    }
+
+    static void IntroTaskThree() // 05.09.2023 Task Three
+    {
+        Console.WriteLine("Please input the width, length of the room in metres in integers, and the price of carpet in pounds per metre squared.");
+
+        string[] inputs = Console.ReadLine()!.Split();
+        int roomWidth = int.Parse(inputs[0]), roomLength = int.Parse(inputs[1]), priceOfCarpet = int.Parse(inputs[2]);
+
+        Console.WriteLine("The total price is: " + CarpetFitting(roomWidth, roomLength, priceOfCarpet));
+    }
+
+    static int CarpetFitting(int roomWidth, int roomLength, int priceOfCarpet) // Fuction for Task Three
+    {
+        const int priceOfUnderlay = 3, priceOfGrippers = 1, priceOfFitting = 50;
+
+        int carpetPrice = roomWidth * roomLength * priceOfCarpet;
+        int underlayPrice = roomWidth * roomLength * priceOfUnderlay;
+        int grippersPrice = (2 * roomWidth + 2 * roomLength) * priceOfGrippers;
+
+        return carpetPrice + underlayPrice + grippersPrice + priceOfFitting;
     }
 }
 
